@@ -90,7 +90,7 @@ var customSearch;
 	}
 	function setScrollReveal(){
 		const $reveal = $('.reveal');
-		if($reveal.length === 0) return; 
+		if($reveal.length === 0) return;
 		const sr = ScrollReveal();
 		sr.reveal('.reveal');
 	}
@@ -140,13 +140,8 @@ var customSearch;
 	function getPicture() {
 		const $banner = $('.banner');
 		if ($banner.length === 0) return;
-		const url = ROOT + 'js/lovewallpaper.json';
-		$.get(url).done(res => {
-			if (res.data.length > 0) {
-				const index = Math.floor(Math.random() * res.data.length);
-				$banner.css('background-image', 'url(' + res.data[index].big + ')');
-			}
-		})
+		const index = Math.floor(Math.random() * 6);
+		$banner.css('background-image', 'url(https://git.oschina.net/iLefter/PublicScreenshots/raw/master/blog_bg/unsplash_' + index + '.jpg)');
 	}
 
 	function getHitokoto() {
